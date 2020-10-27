@@ -1,0 +1,19 @@
+:root {
+  --color-1c2238: #1c2238;
+  --color-fff: #fff;
+  --color-000: #000;
+  --color-ffc600: #ffc600;
+  --color-cb00ff: #cb00ff;
+  --color-0c1020: #0c1020;
+  --color-171b2d: #171b2d;
+  --color-232630: #232630;
+  --color-ccc: #ccc;
+  --color-999: #999;
+  --color: #fff;
+  --bg: #1c2238;
+}
+
+.light-mode {
+  --color: #1c2238;
+  --bg: #fff;
+}
