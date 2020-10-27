@@ -8,7 +8,6 @@
 <script>
 export default {
   data () {
-    console.log(this.$colorMode)
     return {
       darkMode: true
     }
