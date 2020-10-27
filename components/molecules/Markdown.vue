@@ -1,5 +1,5 @@
 <template>
-  <vue-markdown :source="source" />
+  <vue-markdown v-bind="$props" />
 </template>
 
 <script>
@@ -10,10 +10,7 @@ export default {
     VueMarkdown
   },
   props: {
-    source: {
-      type: String,
-      default: ''
-    }
+    ...VueMarkdown.props
   }
 }
 </script>

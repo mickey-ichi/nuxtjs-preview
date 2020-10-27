@@ -25,15 +25,15 @@
       </div>
       <div class="preview">
         <div class="preview-header">
-          <ToggleButton :value="darkMode" @change="handleToggle" />
+          <ToggleButton v-model="darkMode" />
         </div>
-        <div class="content-preview-editor preview-content">
+        <div class="preview-content content-preview-editor" :class="darkMode ? 'markdown-dark-mode' : 'markdown-light-mode'">
           <Markdown :source="textPreview" />
         </div>
       </div>
     </div>
     <div class="bottom-wrapper">
-      <button class="primary-button">
+      <button class="post-button">
         POST
       </button>
     </div>
@@ -49,13 +49,7 @@ export default {
       cursorPosition: 0
     }
   },
-  mounted () {
-    console.log('this.textPreview', this.textPreview)
-  },
   methods: {
-    handleToggle (value) {
-      this.darkMode = value
-    },
     handleTextPreview (value) {
       this.textPreview = value
     },
@@ -108,7 +102,7 @@ export default {
   padding-bottom: 7px;
 
   .content-preview-editor {
-    height: calc(100vh - 215px);
+    height: calc(100vh - 222px);
   }
 
   .editor {
@@ -119,7 +113,7 @@ export default {
       display: flex;
       background-color: rgba(0, 0, 0, 0.4);
       padding: 15px;
-      max-height: 48px;
+      height: 48px;
     }
   }
 
@@ -131,21 +125,43 @@ export default {
       display: flex;
       background-color: rgba(0, 0, 0, 0.4);
       padding: 15px;
-      max-height: 48px;
+      height: 48px;
     }
 
     .preview-content {
       display: flex;
-      background-color: var(--color-171b2d);
       padding: 15px;
       overflow-y: scroll;
     }
+  }
+
+  .markdown-dark-mode {
+    color: var(--color-fff);
+    background-color: var(--color-171b2d);
+  }
+
+  .markdown-light-mode {
+    color: var(--color-0c1020);
+    background-color: var(--color-fff);
   }
 }
 
 .bottom-wrapper {
   background-color: rgba(0, 0, 0, 0.4);
   padding: 15px;
+  text-align: right;
+
+  .post-button {
+    background-image: linear-gradient(117deg, var(--color-ffc600), var(--color-cb00ff));
+    border-radius: 15px;
+    width: 120px;
+    border: none;
+    outline: none;
+    font-weight: 600;
+    cursor: pointer;
+    color: var(--color);
+    padding: 8px 10px;
+  }
 }
 
 </style>
