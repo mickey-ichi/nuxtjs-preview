@@ -18,3 +18,8 @@
   --color: #1c2238;
   --bg: #fff;
 }
+
+body {
+  background-color: var(--bg);
+  color: var(--color);
+}
