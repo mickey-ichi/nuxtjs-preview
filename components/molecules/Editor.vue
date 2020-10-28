@@ -27,9 +27,6 @@ export default {
   data () {
     return {}
   },
-  mounted () {
-    console.log(this)
-  },
   methods: {
     handleCursorPosition (e) {
       this.onCursorPositionChange(e.target.selectionEnd)

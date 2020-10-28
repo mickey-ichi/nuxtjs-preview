@@ -25,7 +25,12 @@
       </div>
       <div class="preview">
         <div class="preview-header">
-          <ToggleButton v-model="darkMode" />
+          <div class="preview-header-title">
+            Preview
+          </div>
+          <div class="preview-label-toggle">
+            <span>ダークモード</span>&nbsp;<ToggleButton v-model="darkMode" color="var(--color-28c56e)" :width="40" :margin="2" />
+          </div>
         </div>
         <div class="preview-content content-preview-editor" :class="darkMode ? 'markdown-dark-mode' : 'markdown-light-mode'">
           <Markdown :source="textPreview" />
@@ -111,6 +116,7 @@ export default {
 
     .editor-header {
       display: flex;
+      justify-content: flex-end;
       background-color: rgba(0, 0, 0, 0.4);
       padding: 15px;
       height: 48px;
@@ -123,13 +129,24 @@ export default {
 
     .preview-header {
       display: flex;
+      align-items: center;
+      justify-content: space-between;
       background-color: rgba(0, 0, 0, 0.4);
       padding: 15px;
       height: 48px;
     }
 
+    .preview-header-title {
+      font-size: 13px;
+      color: var(--color-999);
+    }
+
+    .preview-label-toggle {
+      color: var(--color-999);
+      font-size: 13px;
+    }
+
     .preview-content {
-      display: flex;
       padding: 15px;
       overflow-y: scroll;
     }
