@@ -201,6 +201,13 @@ export default {
     cursor: pointer;
     color: var(--color);
     padding: 8px 10px;
+
+    &:disabled {
+      background: var(--color-ccc);
+      color: var(--color-999);
+      cursor: not-allowed;
+      pointer-events: none;
+    }
   }
 }
 
