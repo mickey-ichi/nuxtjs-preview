@@ -1,5 +1,5 @@
 <template>
-  <div v-html="reversedSource" />
+  <div class="preview-markdown" v-html="reversedSource" />
 </template>
 
 <script>
@@ -29,11 +29,6 @@ export default {
       required: true
     }
   },
-  data () {
-    return {
-      markdown: ''
-    }
-  },
   computed: {
     reversedSource () {
       return markdowned.render(this.source)
@@ -42,7 +37,17 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+  .preview-markdown {
+    white-space: pre-wrap;
+
+    img {
+      width: 100%;
+      height: auto;
+      padding: 15px;
+    }
+  }
+
   .hljs-custom {
     background: var(--color-0c1020);
     color: var(--color-fff);

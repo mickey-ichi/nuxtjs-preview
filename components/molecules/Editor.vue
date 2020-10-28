@@ -1,6 +1,7 @@
 <template>
   <textarea
     class="component-molecules-editor"
+    :value="value"
     @input="handleChange"
     @keydown="handleCursorPosition"
     @click="handleCursorPosition"

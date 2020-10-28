@@ -1,16 +1,30 @@
 <template>
-  <div class="molecules-upload-image">
+  <label class="molecules-upload-image">
     <span class="upload-image-title">
       upload image
     </span>
     <IconPicture />
-    <input type="file" class="upload-image-input-hidden">
-  </div>
+    <input type="file" class="upload-image-input-hidden" accept="image/x-png,image/jpeg" @change="handleUpload">
+  </label>
 </template>
 
 <script>
 export default {
-  name: 'UploadImage'
+  name: 'UploadImage',
+  props: {
+    onUpload: {
+      type: Function,
+      required: true
+    }
+  },
+  methods: {
+    handleUpload (e) {
+      e.preventDefault()
+      if (!e.target.files) { return }
+      const file = e.target.files[0]
+      this.onUpload(file)
+    }
+  }
 }
 </script>
 

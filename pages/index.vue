@@ -13,7 +13,7 @@
     <div class="content-wrapper">
       <div class="editor">
         <div class="editor-header">
-          <UploadImage />
+          <UploadImage :on-upload="handleUpload" />
         </div>
         <div class="content-preview-editor">
           <Editor
@@ -46,6 +46,9 @@
 </template>
 
 <script>
+import { uploadImage } from '@/services/imageService'
+import { getIdImage } from '@/utils/imageUtil'
+
 export default {
   data () {
     return {
@@ -60,6 +63,16 @@ export default {
     },
     handleCursorPosition (cursorPosition) {
       this.cursorPosition = cursorPosition
+    },
+    async handleUpload (file) {
+      const idImage = getIdImage()
+      const textToInsert = `![${idImage}]`
+      const textBeforeCursorPosition = this.textPreview.substring(0, this.cursorPosition)
+      const textAfterCursorPosition = this.textPreview.substring(this.cursorPosition, this.textPreview.length)
+      const content = textBeforeCursorPosition + textToInsert + textAfterCursorPosition
+      this.textPreview = content
+      const url = await uploadImage(file)
+      this.textPreview = content.replace(textToInsert, `![](${url})`)
     }
   },
   head: {
