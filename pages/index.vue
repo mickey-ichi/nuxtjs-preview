@@ -39,7 +39,7 @@
       </div>
     </div>
     <div class="bottom-wrapper">
-      <button class="post-button">
+      <button class="post-button" disabled="disabled">
         POST
       </button>
     </div>
