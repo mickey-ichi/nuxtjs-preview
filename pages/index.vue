@@ -8,6 +8,7 @@
       >
       <div class="header header-fonts-list">
         <span>フォント：</span>
+        <FontList :list="fontList" :on-change="handleFontChange" />
       </div>
     </div>
     <div class="content-wrapper">
@@ -32,7 +33,7 @@
             <span>ダークモード</span>&nbsp;<ToggleButton v-model="darkMode" color="var(--color-28c56e)" :width="40" :margin="2" />
           </div>
         </div>
-        <div class="preview-content content-preview-editor" :class="darkMode ? 'markdown-dark-mode' : 'markdown-light-mode'">
+        <div class="preview-content content-preview-editor" :style="{ fontFamily: currentFont }" :class="darkMode ? 'markdown-dark-mode' : 'markdown-light-mode'">
           <Markdown :source="textPreview" />
         </div>
       </div>
@@ -54,7 +55,13 @@ export default {
     return {
       darkMode: true,
       textPreview: '',
-      cursorPosition: 0
+      cursorPosition: 0,
+      currentFont: 'Arial, sans-serif',
+      fontList: [
+        { label: 'Arial', value: 'Arial, sans-serif' },
+        { label: 'Andale Mono', value: 'Andale Mono, monospace' },
+        { label: 'Impact', value: 'Impact, fantasy' }
+      ]
     }
   },
   methods: {
@@ -73,6 +80,9 @@ export default {
       this.textPreview = content
       const url = await uploadImage(file)
       this.textPreview = content.replace(textToInsert, `![](${url})`)
+    },
+    handleFontChange (value) {
+      this.currentFont = value
     }
   },
   head: {

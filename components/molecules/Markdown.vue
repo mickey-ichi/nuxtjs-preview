@@ -1,4 +1,5 @@
 <template>
+  <!-- eslint-disable-next-line vue/no-v-html -->
   <div class="preview-markdown" v-html="reversedSource" />
 </template>
 
