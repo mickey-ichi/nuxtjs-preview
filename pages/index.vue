@@ -93,6 +93,10 @@ export default {
 
 <style scoped lang="scss">
 
+.preview-container {
+  overflow: hidden;
+}
+
 .header-wrapper {
   display: flex;
   margin-top: 4px;
