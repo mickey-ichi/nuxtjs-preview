@@ -1,9 +1,5 @@
-
-import Vue from 'vue'
-import Vuetify from 'vuetify'
+import Vuetify from 'vuetify/lib'
 import Colors from '@/constants/Colors'
-
-Vue.use(Vuetify)
 
 const options = {
   theme: {
