@@ -3,7 +3,7 @@
     <div class="header-wrapper">
       <input
         placeholder="タイトル"
-        class="header-wrapper__box header-wrapper--input header-wrapper--input-large header-wrapper--dark"
+        class="header-wrapper__box header-wrapper__input header-wrapper--input-large header-wrapper--dark"
         type="text"
       >
       <div class="header-wrapper__box header-wrapper__fonts-list header-wrapper--dark">
