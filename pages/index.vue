@@ -30,7 +30,7 @@
             Preview
           </div>
           <div class="preview-label-toggle">
-            <span>ダークモード</span>&nbsp;<ToggleButton v-model="darkMode" color="var(--color-28c56e)" :width="40" :margin="2" />
+            <span>ダークモード</span>&nbsp;<ToggleButton v-model="darkMode" :color="this.$vuetify.theme.themes.dark.success" :width="40" :margin="2" />
           </div>
         </div>
         <div class="preview-content content-preview-editor" :style="{ fontFamily: currentFont }" :class="darkMode ? 'markdown-dark-mode' : 'markdown-light-mode'">
