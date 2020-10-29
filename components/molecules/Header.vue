@@ -15,7 +15,7 @@ export default {
 
 <style scoped lang="scss">
   .component-header-wrapper {
-    background-color: #1c2238;
+    background-color: var(--v-bg-base);
     border-bottom: 1px solid #ffffff19;
     padding: 5px 5px 5px 15px;
     display: flex;
