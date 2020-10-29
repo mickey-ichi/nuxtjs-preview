@@ -50,8 +50,8 @@ export default {
   }
 
   .hljs-custom {
-    background: var(--color-0c1020);
-    color: var(--color-fff);
+    background: var(--v-bg3-base);
+    color: var(--v-primary-base);
     font-size: 13px;
     padding: 15px;
   }

@@ -1,3 +1,4 @@
+<!--suppress ALL -->
 <template>
   <div>
     <Header />
@@ -23,6 +24,8 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
+  background-color: var(--v-bg-base);
+  color: var(--v-primary-base);
 }
 
 *,

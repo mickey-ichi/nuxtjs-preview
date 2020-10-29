@@ -117,7 +117,7 @@ export default {
     border: none;
     background-color: rgba(0, 0, 0, 0.2);
     outline: none;
-    color: var(--color-fff);
+    color: var(--v-primary-base);
     font-weight: 600;
   }
 
@@ -139,7 +139,7 @@ export default {
 
   .editor {
     width: 50%;
-    border-right: 1px solid var(--color-232630);
+    border-right: 1px solid var(--v-bg2-base);
 
     .editor-header {
       display: flex;
@@ -152,7 +152,7 @@ export default {
 
   .preview {
     width: 50%;
-    color: var(--color-fff);
+    color: var(--v-primary-base);
 
     .preview-header {
       display: flex;
@@ -165,11 +165,11 @@ export default {
 
     .preview-header-title {
       font-size: 13px;
-      color: var(--color-999);
+      color: var(--v-gray1-base);
     }
 
     .preview-label-toggle {
-      color: var(--color-999);
+      color: var(--v-gray1-base);
       font-size: 13px;
     }
 
@@ -180,13 +180,13 @@ export default {
   }
 
   .markdown-dark-mode {
-    color: var(--color-fff);
-    background-color: var(--color-171b2d);
+    color: var(--v-primary-base);
+    background-color: var(--v-bg1-base);
   }
 
   .markdown-light-mode {
-    color: var(--color-0c1020);
-    background-color: var(--color-fff);
+    color: var(--v-bg3-base);
+    background-color: var(--v-primary-base);
   }
 }
 
@@ -196,19 +196,19 @@ export default {
   text-align: right;
 
   .post-button {
-    background-image: linear-gradient(117deg, var(--color-ffc600), var(--color-cb00ff));
+    background-image: linear-gradient(117deg, var(--v-warning-base), var(--v-pink-base));
     border-radius: 15px;
     width: 120px;
     border: none;
     outline: none;
     font-weight: 600;
     cursor: pointer;
-    color: var(--color);
+    color: var(--v-primay-base);
     padding: 8px 10px;
 
     &:disabled {
-      background: var(--color-ccc);
-      color: var(--color-999);
+      background: var(--v-primary-base);
+      color: var(--v-gray-base);
       cursor: not-allowed;
       pointer-events: none;
     }
