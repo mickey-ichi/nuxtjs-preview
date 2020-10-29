@@ -33,7 +33,7 @@ export default {
     border: none;
     outline: none;
     appearance: none;
-    color: var(--color-fff);
+    color: var(--v-primary-base);
     cursor: pointer;
   }
 </style>

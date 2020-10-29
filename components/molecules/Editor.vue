@@ -49,7 +49,7 @@ export default {
     width: 100%;
     height: 100%;
     padding: 15px;
-    color: var(--color);
+    color: var(--v-primary-base);
     overflow-y: scroll;
   }
 </style>
