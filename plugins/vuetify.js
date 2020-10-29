@@ -1,4 +1,4 @@
-import Vuetify from 'vuetify'
+import Vuetify from 'vuetify/lib'
 import Colors from '@/constants/Colors'
 
 const options = {
