@@ -14,7 +14,7 @@ const markdowned = markdownIt({
   highlight (str, lang) {
     if (lang && hljs.getLanguage(lang)) {
       try {
-        return '<pre class="hljs hljs-custom"><code>' +
+        return '<pre class="hljs hljs-custom--dark"><code>' +
           hljs.highlight(lang, str, true).value +
           '</code></pre>'
       } catch (__) {}
@@ -49,7 +49,7 @@ export default {
     }
   }
 
-  .hljs-custom {
+  .hljs-custom--dark {
     background: var(--v-bg3-base);
     color: var(--v-primary-base);
     font-size: 13px;

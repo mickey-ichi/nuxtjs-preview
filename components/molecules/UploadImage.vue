@@ -1,10 +1,10 @@
 <template>
   <label class="molecules-upload-image">
-    <span class="upload-image-title">
+    <span class="molecules-upload-image__title">
       upload image
     </span>
     <IconPicture />
-    <input type="file" class="upload-image-input-hidden" accept="image/x-png,image/jpeg" @change="handleUpload">
+    <input type="file" class="molecules-upload-image__input-hidden" accept="image/x-png,image/jpeg" @change="handleUpload">
   </label>
 </template>
 
@@ -39,13 +39,13 @@ export default {
       opacity: 0.6;
     }
 
-    .upload-image-title {
+    &__title {
       font-size: 12px;
       margin-right: 5px;
       font-weight: 700;
     }
 
-    .upload-image-input-hidden {
+    &__input-hidden {
       display: none;
     }
   }

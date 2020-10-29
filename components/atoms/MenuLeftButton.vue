@@ -1,8 +1,8 @@
 <template>
   <div class="menu-left">
-    <div class="menu-left-button menu-left--button-1" />
-    <div class="menu-left-button menu-left--button-2" />
-    <div class="menu-left-button menu-left--button-3" />
+    <div class="menu-left--button menu-left__style-1" />
+    <div class="menu-left--button menu-left__style-2" />
+    <div class="menu-left--button menu-left__style-3" />
   </div>
 </template>
 
@@ -19,23 +19,23 @@ export default {
     flex-direction: column;
     padding: 10px;
 
-    .menu-left-button {
+    &--button {
       background: linear-gradient(120deg, #ffc600, #cb00ff);
       height: 2px;
       border-radius: 1px;
     }
 
-    .menu-left--button-1 {
+    &__style-1 {
       width: 24px;
       margin-bottom: 5px;
     }
 
-    .menu-left--button-2 {
+    &__style-2 {
       width: 20px;
       margin-bottom: 5px;
     }
 
-    .menu-left--button-3 {
+    &__style-3 {
       width: 16px;
     }
   }

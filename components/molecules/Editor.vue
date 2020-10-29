@@ -1,6 +1,6 @@
 <template>
   <textarea
-    class="component-molecules-editor"
+    class="component-molecules-editor component-molecules-editor--dark"
     :value="value"
     @input="handleChange"
     @keydown="handleCursorPosition"
@@ -40,16 +40,20 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
   .component-molecules-editor {
-    background-color: rgba(0, 0, 0, 0.2);
     border: none;
     resize: none;
     outline: none;
     width: 100%;
     height: 100%;
     padding: 15px;
-    color: var(--v-primary-base);
     overflow-y: scroll;
+
+    &--dark {
+      color: var(--v-primary-base);
+      background-color: rgba(0, 0, 0, 0.2);
+    }
   }
+
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <select class="font-list" @change="handleChange">
+  <select class="font-list font-list--dark" @change="handleChange">
     <option v-for="item in list" :key="item.value" :value="item.value">
       {{ item.label }}
     </option>
@@ -27,13 +27,16 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
   .font-list {
-    background: transparent;
     border: none;
     outline: none;
     appearance: none;
-    color: var(--v-primary-base);
     cursor: pointer;
+
+    &--dark {
+      color: var(--v-primary-base);
+      background: transparent;
+    }
   }
 </style>
