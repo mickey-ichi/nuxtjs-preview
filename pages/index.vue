@@ -3,20 +3,20 @@
     <div class="header-wrapper">
       <input
         placeholder="タイトル"
-        class="header header-input-title"
+        class="header-wrapper__box header-wrapper--input header-wrapper--input-large header-wrapper--dark"
         type="text"
       >
-      <div class="header header-fonts-list">
+      <div class="header-wrapper__box header-wrapper__fonts-list header-wrapper--dark">
         <span>フォント：</span>
         <FontList :list="fontList" :on-change="handleFontChange" />
       </div>
     </div>
     <div class="content-wrapper">
-      <div class="editor">
-        <div class="editor-header">
+      <div class="content-wrapper__editor">
+        <div class="content-wrapper__editor-header content-wrapper--black-04">
           <UploadImage :on-upload="handleUpload" />
         </div>
-        <div class="content-preview-editor">
+        <div class="content-wrapper__content-editor">
           <Editor
             :value="textPreview"
             :on-cursor-position-change="handleCursorPosition"
@@ -24,16 +24,20 @@
           />
         </div>
       </div>
-      <div class="preview">
-        <div class="preview-header">
-          <div class="preview-header-title">
+      <div class="content-wrapper__preview">
+        <div class="content-wrapper__preview-header content-wrapper--black-04">
+          <div class="content-wrapper--preview-title">
             Preview
           </div>
-          <div class="preview-label-toggle">
+          <div class="content-wrapper--preview-label-toggle">
             <span>ダークモード</span>&nbsp;<ToggleButton v-model="darkMode" :color="this.$vuetify.theme.themes.dark.success" :width="40" :margin="2" />
           </div>
         </div>
-        <div class="preview-content content-preview-editor" :style="{ fontFamily: currentFont }" :class="darkMode ? 'markdown-dark-mode' : 'markdown-light-mode'">
+        <div
+          class="content-wrapper__preview-content content-wrapper__content-editor"
+          :style="{ fontFamily: currentFont }"
+          :class="darkMode ? 'content-wrapper--markdown-dark-mode' : 'content-wrapper--markdown-light-mode'"
+        >
           <Markdown :source="textPreview" />
         </div>
       </div>
@@ -95,122 +99,127 @@ export default {
 
 .preview-container {
   overflow: hidden;
-}
 
-.header-wrapper {
-  display: flex;
-  margin-top: 4px;
-  margin-bottom: 4px;
-  padding-left: 15px;
-  padding-right: 15px;
+  .header-wrapper {
+    display: flex;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    padding-left: 15px;
+    padding-right: 15px;
 
-  .header {
-    width: 50%;
-    background-color: rgba(0, 0, 0, 0.2);
-    border-radius: 3px;
-  }
+    &__box {
+      width: 50%;
+      border-radius: 3px;
+    }
 
-  .header-input-title {
-    margin-right: 2px;
-    padding: 12px;
-    font-size: 18px;
-    border: none;
-    background-color: rgba(0, 0, 0, 0.2);
-    outline: none;
-    color: var(--v-primary-base);
-    font-weight: 600;
-  }
+    &--dark {
+      background-color: rgba(0, 0, 0, 0.2);
+    }
 
-  .header-fonts-list {
-    margin-left: 2px;
-    padding: 12px;
-  }
-}
+    &__input {
+      margin-right: 2px;
+      padding: 12px;
+      outline: none;
+      border: none;
+    }
 
-.content-wrapper {
-  display: flex;
-  padding-left: 15px;
-  padding-right: 15px;
-  padding-bottom: 7px;
+    &--input-large {
+      font-size: 18px;
+      font-weight: 600;
+    }
 
-  .content-preview-editor {
-    height: calc(100vh - 222px);
-  }
-
-  .editor {
-    width: 50%;
-    border-right: 1px solid var(--v-bg2-base);
-
-    .editor-header {
-      display: flex;
-      justify-content: flex-end;
-      background-color: rgba(0, 0, 0, 0.4);
-      padding: 15px;
-      height: 48px;
+    &__fonts-list {
+      margin-left: 2px;
+      padding: 12px;
     }
   }
 
-  .preview {
-    width: 50%;
-    color: var(--v-primary-base);
+  .content-wrapper {
+    display: flex;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 7px;
 
-    .preview-header {
+    &--black-04 {
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    &__editor {
+      width: 50%;
+      border-right: 1px solid var(--v-bg2-base);
+    }
+
+    &__content-editor {
+      height: calc(100vh - 222px);
+    }
+
+    &__editor-header {
+      display: flex;
+      justify-content: flex-end;
+      padding: 15px;
+      height: 48px;
+    }
+
+    &__preview {
+      width: 50%;
+    }
+
+    &__preview-header {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      background-color: rgba(0, 0, 0, 0.4);
       padding: 15px;
       height: 48px;
     }
 
-    .preview-header-title {
+    &--preview-title {
       font-size: 13px;
       color: var(--v-gray1-base);
     }
 
-    .preview-label-toggle {
+    &--preview-label-toggle {
       color: var(--v-gray1-base);
       font-size: 13px;
     }
 
-    .preview-content {
+    &__preview-content {
       padding: 15px;
       overflow-y: scroll;
     }
+
+    &--markdown-dark-mode {
+      color: var(--v-primary-base);
+      background-color: var(--v-bg1-base);
+    }
+
+    &--markdown-light-mode {
+      color: var(--v-bg3-base);
+      background-color: var(--v-primary-base);
+    }
   }
 
-  .markdown-dark-mode {
-    color: var(--v-primary-base);
-    background-color: var(--v-bg1-base);
-  }
+  .bottom-wrapper {
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 15px;
+    text-align: right;
 
-  .markdown-light-mode {
-    color: var(--v-bg3-base);
-    background-color: var(--v-primary-base);
-  }
-}
+    .post-button {
+      background-image: linear-gradient(117deg, var(--v-warning-base), var(--v-pink-base));
+      border-radius: 15px;
+      width: 120px;
+      border: none;
+      outline: none;
+      font-weight: 600;
+      cursor: pointer;
+      color: var(--v-primay-base);
+      padding: 8px 10px;
 
-.bottom-wrapper {
-  background-color: rgba(0, 0, 0, 0.4);
-  padding: 15px;
-  text-align: right;
-
-  .post-button {
-    background-image: linear-gradient(117deg, var(--v-warning-base), var(--v-pink-base));
-    border-radius: 15px;
-    width: 120px;
-    border: none;
-    outline: none;
-    font-weight: 600;
-    cursor: pointer;
-    color: var(--v-primay-base);
-    padding: 8px 10px;
-
-    &:disabled {
-      background: var(--v-primary-base);
-      color: var(--v-gray-base);
-      cursor: not-allowed;
-      pointer-events: none;
+      &:disabled {
+        background: var(--v-primary-base);
+        color: var(--v-gray-base);
+        cursor: not-allowed;
+        pointer-events: none;
+      }
     }
   }
 }
