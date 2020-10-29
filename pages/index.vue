@@ -42,8 +42,8 @@
         </div>
       </div>
     </div>
-    <div class="bottom-wrapper">
-      <button class="post-button" disabled="disabled">
+    <div class="bottom-wrapper bottom-wrapper--black-04">
+      <button class="bottom-wrapper__button bottom-wrapper--button-primary" disabled="disabled">
         POST
       </button>
     </div>
@@ -199,19 +199,20 @@ export default {
   }
 
   .bottom-wrapper {
-    background-color: rgba(0, 0, 0, 0.4);
     padding: 15px;
     text-align: right;
 
-    .post-button {
-      background-image: linear-gradient(117deg, var(--v-warning-base), var(--v-pink-base));
+    &--black-04 {
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    &__button {
       border-radius: 15px;
       width: 120px;
       border: none;
       outline: none;
       font-weight: 600;
       cursor: pointer;
-      color: var(--v-primay-base);
       padding: 8px 10px;
 
       &:disabled {
@@ -220,6 +221,11 @@ export default {
         cursor: not-allowed;
         pointer-events: none;
       }
+    }
+
+    &--button-primary {
+      background-image: linear-gradient(117deg, var(--v-warning-base), var(--v-pink-base));
+      color: var(--v-primay-base);
     }
   }
 }
