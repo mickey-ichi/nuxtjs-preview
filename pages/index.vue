@@ -126,6 +126,7 @@ export default {
     &--input-large {
       font-size: 18px;
       font-weight: 600;
+      color: var(--var-primary-base);
     }
 
     &__fonts-list {
